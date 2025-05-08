@@ -46,3 +46,5 @@ ultralytics==8.2.45
 ultralytics-thop==2.0.0
 urllib3==2.2.2
 zipp==3.19.2
+gunicorn
+whitenoise
