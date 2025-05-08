@@ -1,0 +1,81 @@
+{% extends 'accounts/index.html' %}
+
+{% block content %}
+
+{% for m in messages %}
+  <h3 id="flash-message" class="alert {% if m.tags == 'success' %}alert-success{% elif m.tags == 'error' %}alert-danger{% endif %}">
+    {{ m.message }}
+  </h3>
+{% endfor %} 
+
+
+  <title>Login Form</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f0f8ff;  
+    }
+    .container {
+      max-width: 500px;
+      margin-top: 50px;
+      background-color: #ffffff;  
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .form-group label {
+      color: #000080;  
+    }
+    .btn-primary {
+      background-color: #000080;  
+      border: none;
+    }
+    .btn-primary:hover {
+      background-color: #0000cd;  
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2 class="text-center" style="color: #000080;">Admin Login</h2>
+    <small>Login for Administration Access</small>
+    <hr>
+    <form action="" method="post">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password">
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Register</button>
+    </form><br>
+    <div class="form-group">
+        <p>Enter <span style="color: red;">"admin"</span> for username and password to Login</p>
+    </div>
+  </div>
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    // JavaScript to remove message after 2 seconds
+    document.addEventListener("DOMContentLoaded", function() {
+      setTimeout(function() {
+        var messageElement = document.getElementById('flash-message');
+        if (messageElement) {
+          messageElement.style.display = 'none';
+        }
+      }, 2000);
+    });
+  </script>
+
+
+</body>
+ 
+
+{% endblock  %}

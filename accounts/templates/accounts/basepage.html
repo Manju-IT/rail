@@ -1,0 +1,30 @@
+{% extends 'accounts/index.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    .image-container {
+        position: relative;
+        text-align: center;
+        color: white;
+    }
+
+    .title-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2em;
+        font-weight: bold;
+        text-shadow: 1px 1px 2px #000000, 2px 2px 4px #000000, 3px 3px 6px #000000;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.5); /* Optional: Adds background to improve text readability */
+    }
+</style>
+
+<div class="image-container">
+    <img src="{% static 'images/rail.jpeg' %}" alt="Railway Tracks" width="1000px" height="500px">
+    <div class="title-text">RAILWAY TRACK DETECTION BASED ON SENET DEEP LEARNING</div>
+</div>
+
+{% endblock content %}

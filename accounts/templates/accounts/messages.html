@@ -1,0 +1,17 @@
+
+
+{% for m in messages %}
+    <div class="message">
+      <h5>{{ m.message }}</h5>
+    </div>
+  {% endfor %}
+
+
+
+<script>
+    $(document).ready(function() {
+      setTimeout(function() {
+        $('#messages .message').fadeOut('slow');
+      }, 5000); // Adjust the time in milliseconds (5000 ms = 5 seconds)
+    });
+  </script>

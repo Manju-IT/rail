@@ -1,0 +1,90 @@
+{% extends 'users/userbase.html' %}
+
+{% block content %}
+{% load static %}
+<style>
+  .image-container {
+    margin-bottom: 20px; /* Add some spacing between images */
+  }
+</style>
+
+<h1>Plots Saved During Trained Period</h1>
+
+<div class="container">
+  <div class="row">
+    <!-- First Column -->
+    <div class="col-md-6">
+      <div class="image-container">
+        <h3>BoxF1_curve</h3>
+        <img src="{% static 'images/BoxF1_curve.png' %}" alt="BoxF1_curve" height="300px" width="500px">
+      </div>
+      <div class="image-container">
+        <h3>BoxP_Curve</h3>
+        <img src="{% static 'images/BoxP_curve.png' %}" alt="BoxP_Curve" height="300px" width="500px">
+      </div>
+    </div>
+
+    <!-- Second Column -->
+    <div class="col-md-6">
+      <div class="image-container">
+        <h3>BoxPR_curve</h3>
+        <img src="{% static 'images/BoxPR_curve.png' %}" alt="BoxPR_curve" height="300px" width="500px">
+      </div>
+      <div class="image-container">
+        <h3>BoxR_Curve</h3>
+        <img src="{% static 'images/BoxR_curve.png' %}" alt="BoxR_Curve" height="300px" width="500px">
+      </div>
+    </div>
+  </div>
+
+  <!-- Button to Pop up More Graphs Page -->
+  <div class="text-center mt-4">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#moreGraphsModal">
+      View More Graphs
+    </button>
+  </div>
+
+  <!-- Modal for More Graphs -->
+<div class="modal fade" id="moreGraphsModal" tabindex="-1" role="dialog" aria-labelledby="moreGraphsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="moreGraphsModalLabel">More Graphs</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="row">
+              <!-- First Column in Modal -->
+              <div class="col-md-6">
+                <div class="image-container">
+                  <img src="{% static 'images/MaskF1_curve.png' %}" alt="MaskF1_curve" class="img-fluid">
+                </div>
+                <div class="image-container">
+                  <img src="{% static 'images/MaskP_curve.png' %}" alt="MaskP_curve" class="img-fluid">
+                </div>
+              </div>
+              <!-- Second Column in Modal -->
+              <div class="col-md-6">
+                <div class="image-container">
+                  <img src="{% static 'images/MaskR_curve.png' %}" alt="MaskR_curve" class="img-fluid">
+                </div>
+                <div class="image-container">
+                  <img src="{% static 'images/confusion_matrix_normalized.png' %}" alt="Confusion Matrix Normalized" class="img-fluid">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+{% endblock %}

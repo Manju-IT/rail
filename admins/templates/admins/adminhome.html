@@ -1,0 +1,42 @@
+{% extends 'admins/adminbase.html' %}
+
+{% block content %}
+
+<!--Start Message -->
+{% for m in messages %}
+  <h3 id="flash-message" class="alert {% if m.tags == 'success' %}alert-success{% elif m.tags == 'error' %}alert-danger{% endif %}">
+    {{ m.message }}
+  </h3>
+{% endfor %}
+<!-- End Message -->
+
+
+<div style="border: 1px solid #ccc; padding: 20px; margin-top: 20px; background-color: #f9f9f9;">
+    <h2>About the Admin</h2>
+    <p>Welcome to the Admin Home Page. As an administrator, you have access to manage users, view reports, and configure settings to ensure the smooth operation of the system. Your role is crucial in maintaining the integrity and efficiency of our platform.</p>
+    <p>Here are some of your key responsibilities:</p>
+    <ul>
+        <li>Manage user accounts and permissions</li>
+        <li>Monitor system performance and handle any issues</li>
+        <li>Generate and analyze reports</li>
+        <li>Ensure data security and privacy compliance</li>
+        <li>Coordinate with other team members to implement new features and updates</li>
+    </ul>
+    <p>Thank you for your dedication and hard work in keeping our system running smoothly.</p>
+</div>
+
+
+<script>
+    // JavaScript to remove message after 2 seconds
+    document.addEventListener("DOMContentLoaded", function() {
+      setTimeout(function() {
+        var messageElement = document.getElementById('flash-message');
+        if (messageElement) {
+          messageElement.style.display = 'none';
+        }
+      }, 2000);
+    });
+  </script>
+
+  
+{% endblock content %}

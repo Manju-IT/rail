@@ -1,0 +1,66 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>{% block title %}Rail Way Track Detection Based Segnet Deep Learning{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+  <body>
+    <div class="wrapper d-flex align-items-stretch">
+      <nav id="sidebar" class="active">
+        <h1><a href=" " class="logo"></a></h1><br><br>
+        <ul class="list-unstyled components mb-6">
+          <li class="active">
+            <a href="{% url 'accounts:home' %}"><span class="fa fa-home"></span> Home</a>
+          </li>
+          <li>
+            <a href="{% url 'accounts:user-login' %}"><span class="fa fa-user"></span> Login</a>
+          </li>
+          <li>
+            <a href="{% url 'accounts:user-register' %}"><span class="fa fa-sticky-note"></span> Register</a>
+          </li>
+          <li>
+            <a href="{% url 'accounts:admin-login' %}"><span class="fa fa-cogs"></span> AdminLogin</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <h3><b>{% block header %}Rail Way Track Detection{% endblock %}</b></h3>
+            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Welcome user</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        
+
+         
+
+        {% block content %}
+        {% endblock %}
+      </div>
+    </div>
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+   
+  </body>
+</html>

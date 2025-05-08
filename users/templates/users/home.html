@@ -1,0 +1,47 @@
+{% extends 'users/userbase.html' %}
+
+{% block content %}
+
+<style>
+    .content-container {
+        text-align: center;
+        color: #333;
+        padding: 20px;
+    }
+
+    .title-text {
+        font-size: 2em;
+        font-weight: bold;
+        text-shadow: 1px 1px 2px #2620ef, 2px 2px 4px #d3d1d1, 3px 3px 6px #ed2d2d;
+        margin-bottom: 20px;
+    }
+
+    .content-text {
+        font-size: 1.2em;
+        line-height: 1.6;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: justify;
+    }
+
+    .content-text p {
+        margin-bottom: 20px;
+        padding: 0 10px;
+    }
+
+    .content-text p::first-line {
+        font-weight: bold;
+    }
+</style>
+
+<div class="content-container">
+    <div class="title-text">RAILWAY TRACK DETECTION USING CONVOLUTIONAL NEURAL NETWORKS</div>
+    <div class="content-text">
+        <p>Convolutional Neural Networks (CNNs) are a class of deep learning algorithms that are particularly powerful for analyzing visual data. They have a wide range of applications, including image and video recognition, image classification, medical image analysis, and more.</p>
+        <p>CNNs are designed to automatically and adaptively learn spatial hierarchies of features from input images. They consist of multiple layers, each serving a different purpose, such as convolutional layers for feature extraction, pooling layers for dimensionality reduction, and fully connected layers for classification.</p>
+        <p>In the context of railway track detection, CNNs can be used to analyze images or video frames captured by cameras mounted on trains or along the tracks. By training a CNN on labeled data of tracks and non-tracks, the network can learn to distinguish between safe and hazardous track conditions, thereby enhancing the safety and efficiency of railway operations.</p>
+        <p>This technology has the potential to revolutionize the way railway maintenance is performed, moving from manual inspections to automated, real-time monitoring systems.</p>
+    </div>
+</div>
+
+{% endblock %}
